@@ -642,7 +642,7 @@ void completer_t::complete_cmd(const wcstring &str_cmd, bool use_function, bool 
         // Append all possible executables
         expand_error_t result = expand_string(str_cmd, &this->completions,
                                               EXPAND_SPECIAL_FOR_COMMAND | EXPAND_FOR_COMPLETIONS |
-                                                  EXECUTABLES_ONLY | this->expand_flags(),
+                                                  this->expand_flags(),
                                               NULL);
         if (result != EXPAND_ERROR && this->wants_descriptions()) {
             this->complete_cmd_desc(str_cmd);
